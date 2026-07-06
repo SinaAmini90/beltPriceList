@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>لیست قیمت تسمه خودرو</title>
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <!-- HEADER -->
+      <div class="header">
+        <div class="header-icon">
+          <i class="fas fa-cart-shopping"></i>
+        </div>
+        <div>
+          <h1>لیست قیمت تسمه خودرو</h1>
+        </div>
+      </div>
+
+      <!-- FILTER SECTION با منوی کشویی -->
+      <div class="filter-section">
+        <div class="filter-group">
+          <label for="carFilter"> <i class="fas fa-car"></i> خودرو </label>
+          <select id="carFilter" class="filter-select">
+            <option value="همه">همه خودروها</option>
+            <option value="پراید">پراید</option>
+            <option value="پژو ۲۰۶">پژو ۲۰۶</option>
+            <option value="سمند">سمند</option>
+            <option value="تیبا">تیبا</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="brandFilter">
+            <i class="fas fa-certificate"></i> برند
+          </label>
+          <select id="brandFilter" class="filter-select">
+            <option value="همه">همه برندها</option>
+            <option value="بوش">بوش</option>
+            <option value="دایکو">دایکو</option>
+            <option value="ساکس">ساکس</option>
+            <option value="لنتکس">لنتکس</option>
+            <option value="ان‌جی‌کی">ان‌جی‌کی</option>
+            <option value="ایرانسازه">ایرانسازه</option>
+            <option value="مان">مان</option>
+            <option value="اس‌کی‌اف">اس‌کی‌اف</option>
+            <option value="پارس خودرو">پارس خودرو</option>
+            <option value="دلفی">دلفی</option>
+            <option value="کاشیما">کاشیما</option>
+            <option value="رادیات‌ایران">رادیات‌ایران</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="nameFilter"> <i class="fas fa-box"></i> نام کالا </label>
+          <select id="nameFilter" class="filter-select">
+            <option value="همه">همه کالاها</option>
+            <option value="تسمه">تسمه</option>
+            <option value="کیت">کیت</option>
+            <option value="لنت">لنت</option>
+            <option value="فیلتر">فیلتر</option>
+            <option value="شمع">شمع</option>
+            <option value="کمربند">کمربند</option>
+            <option value="بلبرینگ">بلبرینگ</option>
+            <option value="پمپ">پمپ</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- PRODUCT LIST -->
+      <div class="product-list" id="productList">
+        <!-- محصولات توسط JS رندر می‌شوند -->
+      </div>
+    </div>
+
+    <!-- ===== دکمه ثابت تماس ===== -->
+    <a href="tel:09134237637" class="float-btn" id="callBtn">
+      <i class="fas fa-phone"></i>
+      <span>تماس بگیرید</span>
+    </a>
+
+    <script src="script.js"></script>
+  </body>
+</html>
