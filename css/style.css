@@ -9,8 +9,6 @@ body {
   font-family: "Inter", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background: linear-gradient(135deg, #e8edf5 0%, #d5dce8 100%);
   min-height: 100vh;
-  padding: 20px;
-  padding-bottom: 100px;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -26,7 +24,7 @@ body {
   box-shadow:
     0 20px 60px rgba(0, 20, 40, 0.12),
     0 8px 24px rgba(0, 0, 0, 0.05);
-  margin: 10px 0;
+  margin: 10px;
   border: 1px solid rgba(255, 255, 255, 0.7);
 }
 
