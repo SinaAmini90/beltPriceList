@@ -153,10 +153,11 @@ body {
   padding: 18px 20px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
+/* ===== خط اول: عنوان ===== */
 .product-item .product-title {
   font-weight: 700;
   font-size: 16px;
@@ -175,65 +176,79 @@ body {
   font-size: 14px;
 }
 
+/* ===== خط دوم: کد + توضیحات + قیمت (یک خط) ===== */
+.product-row-second {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-top: 6px;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.product-item .product-code {
+  font-weight: 600;
+  font-size: 15px;
+  color: #2a4a6a;
+  background: rgba(42, 125, 225, 0.06);
+  padding: 8px 14px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: "Courier New", monospace;
+  letter-spacing: 0.5px;
+  flex-shrink: 0;
+  min-height: 44px;
+}
+
+.product-item .product-code i {
+  color: #2a7de1;
+  font-size: 13px;
+}
+
+.product-item .product-desc {
+  font-size: 12px;
+  color: #3a5a7a;
+  background: rgba(42, 125, 225, 0.05);
+  padding: 8px 14px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid rgba(42, 125, 225, 0.08);
+  min-height: 44px;
+  justify-content: center;
+  min-width: 60px;
+  max-width: 160px;
+}
+
+.product-item .product-desc i {
+  color: #2a7de1;
+  font-size: 12px;
+}
+
 .product-item .product-price {
   font-weight: 700;
-  font-size: 17px;
+  font-size: 15px;
   color: #1a2a3a;
   background: rgba(42, 125, 225, 0.08);
-  padding: 4px 16px;
+  padding: 8px 16px;
   border-radius: 30px;
   white-space: nowrap;
   display: flex;
   align-items: center;
   gap: 4px;
   border: 1px solid rgba(42, 125, 225, 0.12);
+  flex-shrink: 0;
+  min-height: 44px;
 }
 
 .product-item .product-price i {
   font-size: 13px;
   color: #2a7de1;
-}
-
-.product-item .product-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px 16px;
-  font-size: 13px;
-  color: #3a4a5e;
-  padding-right: 4px;
-  margin-top: 2px;
-}
-
-.product-item .product-meta i {
-  color: #6a7f94;
-}
-
-.product-item .badge-code {
-  background: rgba(0, 0, 0, 0.04);
-  padding: 2px 14px;
-  border-radius: 30px;
-  font-size: 12px;
-  font-weight: 600;
-  font-family: "Courier New", monospace;
-  letter-spacing: 0.5px;
-  color: #2a3a4a;
-}
-
-.product-item .badge-brand {
-  background: rgba(0, 0, 0, 0.04);
-  padding: 2px 14px;
-  border-radius: 30px;
-  font-size: 12px;
-  font-weight: 600;
-  color: #2a3a4a;
-}
-
-.product-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 8px;
 }
 
 /* ===== EMPTY STATE ===== */
@@ -256,7 +271,7 @@ body {
   font-weight: 500;
 }
 
-/* ===== دکمه ثابت تماس - آبی با z-index بالا ===== */
+/* ===== دکمه ثابت تماس ===== */
 .float-btn {
   position: fixed;
   bottom: 30px;
@@ -277,10 +292,8 @@ body {
   text-decoration: none;
   font-family: inherit;
   z-index: 9999;
-  /* خیلی بالا */
   animation: pulse 2s infinite;
   pointer-events: auto;
-  /* فعال برای کلیک */
 }
 
 .float-btn i {
@@ -296,7 +309,6 @@ body {
   transform: scale(0.95);
 }
 
-/* انیمیشن چشمک‌زن */
 @keyframes pulse {
   0% {
     box-shadow: 0 8px 30px rgba(42, 125, 225, 0.4);
@@ -326,7 +338,6 @@ body {
     font-size: 20px;
   }
 
-  /* ===== فیلترها در یک خط ===== */
   .filter-section {
     display: flex;
     flex-direction: row;
@@ -338,7 +349,6 @@ body {
   }
 
   .filter-group {
-    flex: 1;
     min-width: 0;
   }
 
@@ -359,25 +369,38 @@ body {
     padding: 14px 16px;
   }
 
-  .product-item .product-price {
-    font-size: 15px;
-    padding: 2px 12px;
-  }
-
   .product-item .product-title {
     font-size: 14px;
   }
 
-  .product-row {
-    flex-direction: column;
-    align-items: flex-start;
+  /* ===== در موبایل به صورت یک خط با wrap ===== */
+  .product-row-second {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .product-item .product-code {
+    font-size: 14px;
+    padding: 6px 12px;
+    min-height: 38px;
+    min-width: 70px;
+  }
+
+  .product-item .product-desc {
+    font-size: 12px;
+    padding: 6px 12px;
+    min-height: 38px;
+    max-width: none;
   }
 
   .product-item .product-price {
-    align-self: flex-start;
+    font-size: 14px;
+    padding: 6px 12px;
+    min-height: 38px;
+    flex: 0 0 auto;
   }
 
-  /* دکمه تماس در موبایل */
   .float-btn {
     bottom: 20px;
     right: 20px;
@@ -409,9 +432,33 @@ body {
     gap: 6px;
   }
 
-  .product-item .product-meta {
-    gap: 6px;
+  .product-item .product-title {
+    font-size: 13px;
+  }
+
+  .product-row-second {
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+
+  .product-item .product-code {
     font-size: 12px;
+    padding: 4px 10px;
+    min-height: 34px;
+    min-width: 50px;
+  }
+
+  .product-item .product-desc {
+    font-size: 10px;
+    padding: 4px 10px;
+    min-height: 34px;
+  }
+
+  .product-item .product-price {
+    font-size: 13px;
+    padding: 4px 10px;
+    min-height: 34px;
+    flex: 0 0 auto;
   }
 
   .float-btn {

@@ -934,6 +934,7 @@ function getFilteredProducts() {
 // ============================================================
 //  RENDER
 // ============================================================
+
 function render() {
   const result = getFilteredProducts();
 
@@ -949,20 +950,27 @@ function render() {
 
   let html = "";
   result.forEach((p) => {
-    const title = `${p.name} ${p.car} ${p.description}`;
+    // عنوان: name + car + brand
+    const title = `${p.name} ${p.car} (${p.brand})`;
+
+    // توضیحات (اگه خالی نباشه)
+    const descText = p.description && p.description !== "" ? p.description : "";
+
     html += `
             <div class="product-item">
                 <div class="product-row">
                     <div class="product-title">
                         <i class="fas fa-cube"></i> ${title}
                     </div>
+                </div>
+                <div class="product-row-second">
+                    <div class="product-code">
+                        <i class="fas fa-barcode"></i> ${p.code}
+                    </div>
+                    ${descText ? `<div class="product-desc"><i class="fas fa-info-circle"></i> ${descText}</div>` : ""}
                     <div class="product-price">
                         <i class="fas fa-tag"></i> ${formatPrice(p.price)}
                     </div>
-                </div>
-                <div class="product-meta">
-                    <span class="badge-code"><i class="fas fa-barcode"></i> ${p.code}</span>
-                    <span class="badge-brand"><i class="fas fa-certificate"></i> ${p.brand}</span>
                 </div>
             </div>
         `;
